@@ -29,9 +29,9 @@ export default function Canvass(props) {
     context.fillRect(1, 1, width - 20, 600);
     context.font = "20px Arial";
     context.fillStyle = "black";
-    context.fillText(props.PLACE,250,80);
-    context.fillText(props.TEMP+" °C",250,500);
-    context.fillText(props.DESCRIPT,20,500);
+    context.fillText(props.PLACE,Width-200,80);
+    context.fillText(props.TEMP+" °C",Width-200,500);
+    context.fillText(props.DESCRIPT,50,500);
   });
 
   return <canvas class ="rain" ref={canvasRef} width={Width-16} height={600} />;

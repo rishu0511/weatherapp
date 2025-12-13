@@ -7,6 +7,7 @@ import Canvasr from "./canvas_r.js";
 const delay = 0.03;
 export default function Canvas(props) {
   const [counter, setCounter] = useState(100);
+  const [vd,setv]=useState(0.2)
   const timer = useRef(null);
   const [sunny, setsunny] = useState(false);
   const [cloud, setcloud] = useState(false);
@@ -15,7 +16,7 @@ export default function Canvas(props) {
   // we can save timer in useRef and pass it to child
   useEffect(() => {
     // useRef value stored in .current property
-    timer.current = setInterval(() => setCounter((v) => v + 0.2), delay * 1000);
+    timer.current = setInterval(() => setCounter((v) => v +vd), delay * 1000);
 
     // clear on component unmount
     return () => {
@@ -45,10 +46,12 @@ export default function Canvas(props) {
       setfog(false);
     }
   },[props.DESCRIPT]);
-
+  function settv(d){
+    setv(d)
+  }
   return (
     <div>
-      <Child counter={counter} currentTimer={timer.current} />
+      <Child counter={counter} currentTimer={timer.current} SETV={settv}/>
       {sunny ? <Canvass COUNT={counter} PLACE={props.PLACE} TEMP ={props.TEMP} DESCRIPT={props.DES}/> : null}
       {cloud ?  <div class = "cloud"><Canvasc COUNT={counter} PLACE={props.PLACE} TEMP ={props.TEMP} DESCRIPT={props.DES}/></div> : null}
       {fog ? <Canvasf COUNT={counter} PLACE={props.PLACE} TEMP ={props.TEMP} DESCRIPT={props.DES}/> : null}
@@ -57,12 +60,15 @@ export default function Canvas(props) {
   );
 }
 
-function Child({ counter, currentTimer }) {
+function Child({ counter, currentTimer,SETV }) {
   // this will clearInterval in parent component after counter gets to 5
   useEffect(() => {
-    if (counter < 500) return;
+    if (counter <= 500) return;
     clearInterval(currentTimer);
-  }, [counter, currentTimer]);
+    if(counter>500)return;
+    clearInterval(currentTimer);
+    SETV(-0.2)
+  }, [counter, currentTimer,SETV]);
 
   return null;
 }

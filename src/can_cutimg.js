@@ -12,7 +12,7 @@ export default function Canvascimg(props) {
     context.fillText(props.DESC+": " + props.VAL +props.UNIT, 10, 165);
   });
   function draw(ctx,img_src) {
-    ctx.clearRect(0, 0, 160, 175);
+    ctx.clearRect(0, 0, 260, 175);
     const img = new Image();
     img.onload = () => {
         ctx.drawImage(img, 0, 200, 180, 150, 0, 0, 150, 140);
@@ -20,6 +20,6 @@ export default function Canvascimg(props) {
     img.src = img_src;
   }
   
-  return <canvas ref={canvasRef} width={160} height={175} />;
+  return <canvas ref={canvasRef} width={260} height={175} />;
 }
                                                                               

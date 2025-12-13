@@ -9,18 +9,18 @@ export default function Canvasimg(props) {
 
     context.font = "15px 'Franklin Gothic Medium' ";
     context.fillStyle = "black";
-    context.fillText(props.DESC+": " + props.VAL+ props.UNIT, 10, 163);
+    context.fillText(props.DESC+": " + props.VAL+ props.UNIT, 60, 163);
   });
   function draw(ctx,img_src) {
-    ctx.clearRect(0, 0, 160, 175);
+    ctx.clearRect(0, 0, 260, 175);
     ctx.fillStyle = "white";
     ctx.fill()
     const img = new Image();
     img.onload = () => {
-      ctx.drawImage(img, 10, 0,150,150);
+      ctx.drawImage(img, 40, 0,150,150);
     };
     img.src = img_src;
   }
   
-  return <canvas ref={canvasRef} width={160} height={175} />;
+  return <canvas ref={canvasRef} width={260} height={175} />;
 }

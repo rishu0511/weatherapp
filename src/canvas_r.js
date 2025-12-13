@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from "react";
 export default function Canvasr(props) {
   const canvasRef = useRef()
   const [width,setwidth] = useState(0)
+  const count = useRef(0)
   useEffect(()=>{
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
@@ -69,9 +70,9 @@ export default function Canvasr(props) {
         ctx.save()
         context.font = "20px Arial";
         ctx.fillStyle = "skyblue";
-        ctx.fillText(props.PLACE,250,80);
-        ctx.fillText(props.TEMP+" °C",250,500);
-        ctx.fillText(props.DESCRIPT,20,500);
+        context.fillText(props.PLACE,width-200,80);
+        context.fillText(props.TEMP+" °C",width-200,500);
+        context.fillText(props.DESCRIPT,50,500);
         ctx.restore()
          // Minute marks
         window.requestAnimationFrame(clock);

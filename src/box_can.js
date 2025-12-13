@@ -10,12 +10,12 @@ export default function Canvasb(props) {
     clock(context,props.TEM);
     context.font = "15px'Franklin Gothic Medium'";
     context.fillStyle = "black";
-    context.fillText(props.DES+": " + Math.floor(props.TEM )+"° C" , 0, 175);
+    context.fillText(props.DES+": " + Math.floor(props.TEM )+"° C" , 30, 175);
   });
   function clock(ctx,temp) {
     ctx.save();
-    ctx.clearRect(0, 0, 170, 178);
-    ctx.translate(83, 82);
+    ctx.clearRect(0, 0, 250, 178);
+    ctx.translate(113, 82);
     ctx.scale(0.45, 0.45);
     ctx.rotate(Math.PI / 1.32);
     ctx.strokeStyle = "black";
@@ -96,5 +96,5 @@ export default function Canvasb(props) {
     ctx.restore();
   }
 
-  return <canvas ref={canvasRef} width={170} height={178} />;
+  return <canvas ref={canvasRef} width={250} height={178} />;
 }
