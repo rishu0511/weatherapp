@@ -9,6 +9,8 @@ let lati = 0;
 let longi  = 0;
 var Data = [];
 var weatherdata ={}
+const apiopenweather = "9d159926fb8c9e6cfd91f069d195f1fd"
+const apiKey = process.env.MY_API_KEY;
 app.get("/message", (req, res) => {
 
   res.json({info:weatherdata});
@@ -21,7 +23,7 @@ app.post("/getloc",async(req,res)=>{
       params: {
         q:City,
         limit:5,
-        appid:"9d159926fb8c9e6cfd91f069d195f1fd"
+        appid:apiKey
       }
     }
   ).then(({ data }) => {
@@ -47,7 +49,7 @@ app.post("/getloc",async(req,res)=>{
         params: {
           lat: lati,
           lon:longi,
-          appid:"9d159926fb8c9e6cfd91f069d195f1fd"
+          appid:apiKey
         }
       })
       .then(({ data }) => {
