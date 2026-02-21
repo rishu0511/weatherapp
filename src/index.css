@@ -79,9 +79,9 @@ button:hover {
     font-size: 14px;
   }
   .weather_box{
-    width:200px;
+    width:160px;
   }
   .front-canvas{
-    width:100%;
+    width:screen;
   }
 }

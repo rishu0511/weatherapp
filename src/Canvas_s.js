@@ -34,5 +34,5 @@ export default function Canvass(props) {
     context.fillText(props.DESCRIPT,50,500);
   });
 
-  return <canvas class ="rain front-canvas" ref={canvasRef} width={Width-16} height={600} />;
+  return <canvas class ="rain front-canvas" ref={canvasRef} width={Width} height={600} />;
 }
