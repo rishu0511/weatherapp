@@ -17,7 +17,7 @@ const Apps = (props) => {
     });
   }
 const Fetchdata = useCallback(async() => {
-    await axios.get( `${process.env.BACKEND_API}/api/weather/${input.city}`)
+    await axios.get(`${process.env.BACKEND_API}${input.city}`)
     .then(({ data }) => {
       setweather(data)
   })
