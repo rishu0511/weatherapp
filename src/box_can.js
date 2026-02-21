@@ -96,5 +96,5 @@ export default function Canvasb(props) {
     ctx.restore();
   }
 
-  return <canvas ref={canvasRef} width={250} height={178} />;
+  return <canvas class="weather_box" ref={canvasRef} width={250} height={178} />;
 }

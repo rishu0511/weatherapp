@@ -126,5 +126,5 @@ export default function Clock(props) {
     ctx.restore();
   }
   
-  return <canvas ref={canvasRef} width={275} height={180} />;
+  return <canvas class="weather_box" ref={canvasRef} width={275} height={180} />;
 }

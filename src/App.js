@@ -33,37 +33,34 @@ export default function App() {
     const ref = useRef(0)
     useEffect(()=>{
         ref.current=value
+        if(data.current){
+             setweath((data.current.main.temp-273))
+             setmax((data.current.main.temp_max-273)) 
+             setmin((data.current.main.temp_min-273))
+             setAirp(data.current.main.pressure)
+             setgrnd(data.current.main.grnd_level)
+             setslevel(data.current.main.sea_level)
+             sethumid(data.current.main.humidity)
+             setwind(data.current.wind.speed)
+             setgust(data.current.wind.gust) 
+             setdeg(data.current.wind.deg)
+             setsunrise(data.current.sys.sunrise) 
+             setsunset(data.current.sys.sunset) 
+             setlat(data.current.coord.lat)
+             setlon(data.current.coord.lon)
+             setvisible(data.current.visibility)
+            data.current.weather.map((element,index)=>{
+                if(index===0){
+                  setdesc(element.main)
+                }
+            })
         setplace(data.current.name)
         setdes(data.current.weather);
-        data.current.main ? setweath((data.current.main.temp-273)) :setweath(0) ;
-        data.current.main ? setmax((data.current.main.temp_max-273)) : setmax(0) ;
-        data.current.main ? setmin((data.current.main.temp_min-273)) : setmin(0);
-        data.current.main ? setAirp(data.current.main.pressure): setAirp(0)
-        data.current.main ? setgrnd(data.current.main.grnd_level): setgrnd(0)
-        data.current.main ? setslevel(data.current.main.sea_level): setslevel(0)
-        data.current.main ? sethumid(data.current.main.humidity): sethumid(0)
-        data.current.wind ? setwind(data.current.wind.speed) : setwind(0)
-        data.current.wind ? setgust(data.current.wind.gust) : setgust(0)
-        data.current.wind ? setdeg(data.current.wind.deg) : setdeg(0)
-        data.current.sys ? setsunrise(data.current.sys.sunrise) : setsunrise(1000) 
-        data.current.sys ? setsunset(data.current.sys.sunset) : setsunset(1000)
-        data.current.coord? setlat(data.current.coord.lat):setlat(0)
-        data.current.coord? setlon(data.current.coord.lon):setlon(0)
-
-        data.current.visibility? setvisible(data.current.visibility) : setvisible(0);
-        data.current.weather?data.current.weather.map((element,index)=>{
-            if(index===0){
-                setdesc(element.main)
-            }
-        }):setdesc("Clear");
-
+        }
     },[value])
     function set_w(Data){
+        data.current=Data.current
         setvalue(value+1)
-        data.current=Data
-    }
-    function set_weather(Data){
-
     }
     return(
     <div class="canvas">
@@ -84,7 +81,7 @@ export default function App() {
             <p class="para">Latitude : {lat}°</p>
             <p class="para">Longitude : {lon}°</p>
             <p class="para">Sea level : {slevel} meter</p>
-            <p class="last_p">Wind flowing degree : {deg}°</p>
+            <p class="last_p">Wind flowing degree : {deg}°</p> 
             <CanvasReal/>
         </div>
     </div>

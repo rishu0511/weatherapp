@@ -70,8 +70,8 @@ export default function Canvasr(props) {
         ctx.save()
         context.font = "20px Arial";
         ctx.fillStyle = "skyblue";
-        context.fillText(props.PLACE,width-200,80);
-        context.fillText(props.TEMP+" °C",width-200,500);
+        context.fillText(props.PLACE,width-200,80)
+        context.fillText(props.TEMP+" °C",width-100,500)
         context.fillText(props.DESCRIPT,50,500);
         ctx.restore()
          // Minute marks
@@ -79,5 +79,5 @@ export default function Canvasr(props) {
       } 
       window.requestAnimationFrame(clock);
   },[canvasRef])
-  return <canvas ref={canvasRef} width={width} height={600} />;
+  return <canvas class="front-canvas"ref={canvasRef} width={width} height={600} />;
 }

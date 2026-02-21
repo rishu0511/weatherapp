@@ -9,8 +9,8 @@ let lati = 0;
 let longi  = 0;
 var Data = [];
 var weatherdata ={}
-const apiopenweather = "9d159926fb8c9e6cfd91f069d195f1fd"
-const apiKey = process.env.MY_API_KEY;
+const apiKey = "9d159926fb8c9e6cfd91f069d195f1fd"
+const apiKey1 = process.env.MY_API_KEY;
 app.get("/message", (req, res) => {
 
   res.json({info:weatherdata});

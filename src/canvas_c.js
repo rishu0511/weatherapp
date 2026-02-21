@@ -28,8 +28,8 @@ export default function Canvasc(props) {
 
       context.font = "20px Arial";
       context.fillStyle = "skyblue";
-      context.fillText(props.PLACE,Width-200,80);
-      context.fillText(props.TEMP+" °C",Width-200,500);
+      context.fillText(props.PLACE,Width-200,80)
+      context.fillText(props.TEMP+" °C",Width-100,500)
       context.fillText(props.DESCRIPT,50,500);
       const now = new Date();
       const sec = now.getSeconds()
@@ -74,5 +74,5 @@ export default function Canvasc(props) {
     ctx.closePath();
     if (fillColor) ctx.fill();
   }
-  return <canvas class = "cloud"ref={canvasRef} width={Width} height={600} />;
+  return <canvas class = "cloud front-canvas"  ref={canvasRef} width={Width} height={600} />;
 }

@@ -22,5 +22,5 @@ export default function Canvasimg(props) {
     img.src = img_src;
   }
   
-  return <canvas ref={canvasRef} width={260} height={175} />;
+  return <canvas class="weather_box" ref={canvasRef} width={260} height={175} />;
 }

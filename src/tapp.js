@@ -7,7 +7,7 @@ import Canvasr from "./canvas_r.js";
 const delay = 0.03;
 export default function Canvas(props) {
   const [counter, setCounter] = useState(100);
-  const [vd,setv]=useState(0.2)
+  const [vd,setv]=useState(0.2);
   const timer = useRef(null);
   const [sunny, setsunny] = useState(false);
   const [cloud, setcloud] = useState(false);
