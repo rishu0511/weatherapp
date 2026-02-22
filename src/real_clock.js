@@ -115,5 +115,5 @@ export default function CanvasReal(props) {
       
   }, [canvasRef]);
 
-  return <canvas ref={canvasRef} width={150} height={160} />;
+  return <canvas class= "clock" ref={canvasRef} width={150} height={160} />;
 }

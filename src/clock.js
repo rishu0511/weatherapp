@@ -25,7 +25,7 @@ export default function Clock(props) {
     const now= new Date(DDte);
     ctx.save();
     ctx.clearRect(0, 0, 175,180);
-    ctx.translate(80, 80);
+    ctx.translate(113, 80);
     ctx.scale(0.45, 0.45);
     ctx.rotate(-Math.PI / 2);
     ctx.strokeStyle = "black";
@@ -121,10 +121,10 @@ export default function Clock(props) {
     ctx.beginPath();
     ctx.lineWidth = 3;
     ctx.strokeStyle = "darkblue";
-    ctx.arc(80, 80, 67, 0, Math.PI * 2, true)
+    ctx.arc(113, 80, 67, 0, Math.PI * 2, true)
     ctx.stroke();
     ctx.restore();
   }
   
-  return <canvas class="weather_box" ref={canvasRef} width={275} height={180} />;
+  return <canvas class="weather_box " ref={canvasRef} width={275} height={180} />;
 }

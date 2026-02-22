@@ -11,9 +11,9 @@ button:hover {
   background-color: #7AB2D3;
 }
 .FORM{
-   position: relative;
-   top:-5px;
-   left:0;
+    position: relative;
+    top:-5px;
+    left:0;
     width:100%;
     height:50px;
     display: flex;
@@ -79,9 +79,12 @@ button:hover {
     font-size: 14px;
   }
   .weather_box{
-    width:160px;
+    width:170px;
   }
   .front-canvas{
-    width:screen;
+    width:100%;
+  }
+  .clock{
+    width:130px;
   }
 }

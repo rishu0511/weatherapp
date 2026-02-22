@@ -23,7 +23,7 @@ export default function Canvasc(props) {
       grad.addColorStop(1, "darkblue");
       // Fill rectangle with gradient
       context.fillStyle = grad;
-      context.fillRect(1, 1, width - 20, 600);
+      context.fillRect(1, 1, width, 600);
       if (canvasRef == null) return;
 
       context.font = "20px Arial";

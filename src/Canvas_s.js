@@ -26,7 +26,7 @@ export default function Canvass(props) {
 
     // Fill rectangle with gradient
     context.fillStyle = grad;
-    context.fillRect(1, 1, width - 20, 600);
+    context.fillRect(1, 1, width , 600);
     context.font = "20px Arial";
     context.fillStyle = "black";
     context.fillText(props.PLACE,Width-200,80);
