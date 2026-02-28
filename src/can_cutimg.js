@@ -9,7 +9,7 @@ export default function Canvascimg(props) {
 
     context.font = "15px 'Franklin Gothic Medium' ";
     context.fillStyle = "black";
-    context.fillText(props.DESC+": " + props.VAL +props.UNIT, 10, 165);
+    context.fillText(props.DESC+": " + props.VAL +props.UNIT, 50, 165);
   });
   function draw(ctx,img_src) {
     ctx.clearRect(0, 0, 260, 175);

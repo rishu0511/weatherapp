@@ -15,7 +15,7 @@ export default function Clock(props) {
     const now= new Date(DDte);
     const min = now.getMinutes();
     const hr = now.getHours() % 12;
-    context.fillText(props.DES + " "+hr+":"+min +" "+props.MRDN, 20, 177);
+    context.fillText(props.DES + " "+hr+":"+min +" "+props.MRDN, 50, 177);
   });
   
   function clock(ctx,DATE) {
